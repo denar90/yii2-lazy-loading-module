@@ -16,5 +16,10 @@
 	],
 	"require": {
 		"yiisoft/yii2": "*"
+	},
+	"autoload": {
+	  "psr-4": {
+		"denar90\\lazy-loading\\": ""
+	  }
 	}
 }
