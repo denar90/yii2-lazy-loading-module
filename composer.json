@@ -1,0 +1,20 @@
+{
+	"name": "denar90/yii2-lazy-loading-module",
+	"description": "Yii2 module for content lazy loading",
+	"keywords": ["yii2", "lazy loading", "module"],
+	"type": "yii2-extension",
+	"license": "MIT",
+	"support": {
+		"source": "https://github.com/denar90/yii2-lazy-loading-module",
+        "issues": "https://github.com/denar90/yii2-lazy-loading-module/issues"
+	},
+	"authors": [
+        {
+            "name": "denar90",
+            "homepage" : "https://github.com/denar90"
+        }
+	],
+	"require": {
+		"yiisoft/yii2": "*"
+	}
+}
