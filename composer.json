@@ -14,12 +14,8 @@
             "homepage" : "https://github.com/denar90"
         }
 	],
+	"minimum-stability": "master",
 	"require": {
 		"yiisoft/yii2": "*"
-	},
-	"autoload": {
-	  "psr-4": {
-		"denar90\\lazy-loading\\": ""
-	  }
 	}
 }
