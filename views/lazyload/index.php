@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Html;
 use yii\helpers\Url;
-use backend\modules\LazyLoad\AppAsset;
+use denar90\LazyLoad\AppAsset;
 
 AppAsset::register($this);
 

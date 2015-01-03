@@ -1,12 +1,12 @@
 <?php
 
-namespace backend\modules\LazyLoad;
+namespace denar90\LazyLoad;
 
 use yii\web\AssetBundle;
 
 class AppAsset extends AssetBundle
 {
-    public $sourcePath = '@app/modules/LazyLoad/assets';
+    public $sourcePath = '@app/denar90/LazyLoad/assets';
     public $css = [
 		'css/lazyloading.css',
     ];

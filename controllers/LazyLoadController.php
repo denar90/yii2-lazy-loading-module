@@ -1,6 +1,6 @@
 <?php
 
-namespace backend\modules\LazyLoad\controllers;
+namespace denar90\LazyLoad\controllers;
 
 use Yii;
 use yii\web\Controller;

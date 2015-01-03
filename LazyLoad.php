@@ -1,10 +1,10 @@
 <?php
 
-namespace backend\modules\LazyLoad;
+namespace denar90\LazyLoad;
 
 class LazyLoad extends \yii\base\Module {
 
-    public $controllerNamespace = 'backend\modules\LazyLoad\controllers';
+    public $controllerNamespace = 'denar90\LazyLoad\controllers';
 
     public $modelNamespace = '';
 
