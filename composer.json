@@ -15,7 +15,6 @@
         }
 	],
 	"require": {
-	  	"denar90/yii2-lazy-loading-module": "dev-master",
 		"yiisoft/yii2": "*"
 	},
 	"autoload": {
