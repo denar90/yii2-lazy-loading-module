@@ -14,7 +14,7 @@
             "homepage" : "https://github.com/denar90"
         }
 	],
-	"minimum-stability": "master",
+	"minimum-stability": "dev",
 	"require": {
 		"yiisoft/yii2": "*"
 	}
