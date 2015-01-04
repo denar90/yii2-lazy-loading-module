@@ -20,7 +20,7 @@
 	},
 	"autoload": {
 	  "psr-4": {
-		"denar90\\LazyLoad\\": ""
+		"denar90\\LazyLoading\\": ""
 	  }
 	}
 }
