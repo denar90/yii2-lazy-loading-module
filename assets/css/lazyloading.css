@@ -23,11 +23,13 @@
 	float: left;
 	color: black !important;
 }
+
 .js-ui-loader span {
     height: 100%;
     vertical-align: middle;
     display: inline-block;
 }
+
 .js-ui-loader .glyphicon {
     margin: 0;
     vertical-align: middle;
