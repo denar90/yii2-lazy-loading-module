@@ -1,9 +1,15 @@
 <?php
+/**
+ * @link https://github.com/denar90/yii2-lazy-loading-module
+ * @copyright Copyright (c) 2014 denar90
+ * @license http://opensource.org/licenses/MIT MIT
+ */
+
 use yii\helpers\Html;
 use yii\helpers\Url;
-use denar90\LazyLoad\AppAsset;
+use denar90\lazyloading\LazyLoadingAssets;
 
-AppAsset::register($this);
+LazyLoadingAssets::register($this);
 
 $this->title = 'List of items';
 ?>
@@ -37,10 +43,10 @@ $this->title = 'List of items';
 <?php
 
 $this->registerJs("
-		$(document).ready(function() {
-            var lazyLoadingInstance = new lazyLoading(),
-                getDataUrl = '".  Url::toRoute('/lazyload/lazyload/index') ."';
-			lazyLoadingInstance.init(getDataUrl);
-		});
-	");
+    $(document).ready(function() {
+        var lazyLoadingInstance = new lazyLoading(),
+            getDataUrl = '".  Url::toRoute('/lazyloading/lazyloading/index') ."';
+        lazyLoadingInstance.init(getDataUrl);
+    });
+");
 ?>
