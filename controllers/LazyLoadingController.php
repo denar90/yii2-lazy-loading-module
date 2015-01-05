@@ -28,8 +28,30 @@ class LazyLoadingController extends Controller {
                 'additionalData' => [
                     'limit' => $limit,
                     'offset' => $offset,
+                    'mode' => $module->mode
                 ]
             ];
+
+            //build additional urls depends on mode
+            switch($module->mode) {
+                case 'list':
+                    break;
+                case 'view':
+                    $viewItemLink = $module->additionalLinks['view']['controller'] . '/' . $module->additionalLinks['view']['action'];
+                    $data['additionalData']['urls'] = [
+                        'viewItem' => Yii::$app->urlManager->createUrl([$viewItemLink]),
+                    ];
+                    break;
+                case 'edit':
+                    $viewItemLink = $module->additionalLinks['view']['controller'] . '/' . $module->additionalLinks['view']['action'];
+                    $removeItemLink = $module->additionalLinks['delete']['controller'] . '/' . $module->additionalLinks['delete']['action'];
+                    $data['additionalData']['urls'] = [
+                        'editItem' => Yii::$app->urlManager->createUrl([$viewItemLink]),
+                        'removeItem' => Yii::$app->urlManager->createUrl([$removeItemLink])
+                    ];
+                    break;
+            }
+
             //get data method from own model
             $data['items'] = $items->getAllItems($limit, $offset);
             Yii::$app->response->format = 'json';
