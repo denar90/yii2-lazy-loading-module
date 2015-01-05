@@ -2,6 +2,10 @@ Lazy loading Module for Yii2
 ========================
 Yii2 module for content lazy loading
 
+Main features:
+* showing items mode. Probability to use both in backend and in frontend
+* flexible module configuration
+
 Installation
 ------------
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
@@ -29,7 +33,47 @@ to the require section of your application's `composer.json` file.
 	],
 ],
 ```
+This configuration will show only list, without links on each item. Mode by default is 'list'.
 
+* Mode 'view' configurations, for example:
+
+```php
+'modules' => [
+    'lazyloading' => [
+		'class' => 'denar90\lazyloading\LazyLoading',
+		'modelNamespace' => '\app\models\Items', \\ your model with items
+		'mode' => 'edit',
+		'additionalLinks' => [
+			'view' => [
+				'controller' => 'yourController',
+				'action' => 'yourViewAction'
+			]
+		]
+	],
+],
+```
+
+* Mode 'edit' configurations, for example:
+
+```php
+'modules' => [
+    'lazyloading' => [
+		'class' => 'denar90\lazyloading\LazyLoading',
+		'modelNamespace' => '\app\models\Items', \\ your model with items
+		'mode' => 'edit',
+		'additionalLinks' => [
+			'view' => [
+				'controller' => 'yourController',
+				'action' => 'yourViewAction'
+			],
+			'delete' => [
+				'controller' => 'yourController',
+				'action' => 'yourDeleteItemAction'
+			]
+		]
+	],
+],
+```
 Usage
 -----
 In your action call module
@@ -42,4 +86,19 @@ For example:
 		$lazyLoading = Yii::$app->getModule('lazyloading');
 		return $lazyLoading->runAction('lazyloading/index');
 	}
+...
+```
+
+Also you should create method in your model for getting list of items.
+For example:
+
+```php
+
+namespace app\models\Items;
+...
+ 	public function getAllItems($limit = 10, $offset = 0) {
+		return $this->find()->offset($offset)->limit($limit)->all();
+	}
+...
+
 ```
