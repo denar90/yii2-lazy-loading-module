@@ -27,15 +27,15 @@ lazyLoading.prototype.init = function(getDataUrl) {
 	//remove item event
 	$('.js-lazy-content').on('click', '.js-remove-item', function(event) {
 		event.preventDefault();
-		var removeUrl = $(this).attr('href');
+		var removeUrl = $(this).attr('href'),
+			$itemElement = $(this).closest('.js-item-container');
 		$.ajax({
 			url: removeUrl,
 			type: 'GET',
 			success: function () {
-				$(this).closest('.js-item-container').remove();
+				$itemElement.remove();
 			}
 		});
-
 	});
 
 	/**
