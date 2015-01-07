@@ -46,7 +46,7 @@ class LazyLoadingController extends Controller {
                     $viewItemLink = $module->additionalLinks['view']['controller'] . '/' . $module->additionalLinks['view']['action'];
                     $removeItemLink = $module->additionalLinks['delete']['controller'] . '/' . $module->additionalLinks['delete']['action'];
                     $data['additionalData']['urls'] = [
-                        'editItem' => Yii::$app->urlManager->createUrl([$viewItemLink]),
+                        'viewItem' => Yii::$app->urlManager->createUrl([$viewItemLink]),
                         'removeItem' => Yii::$app->urlManager->createUrl([$removeItemLink])
                     ];
                     break;
